@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+ // @author RICHARD nicolas et SAVOYE Valentin
 
 public class Grille extends JPanel
 {
@@ -15,16 +16,16 @@ public class Grille extends JPanel
     {
         this.vue = vue;
         cases = vue.getCases();
-        for (int i=0;i<vue.getlar();i++){
+        for (int i=0;i<vue.getLargeur();i++){
             for (int j=0;j<vue.gethaut();j++){
-                cases[i][j] = new Case(vue.getd());
+                cases[i][j] = new Case(vue.getDifficulte());
             }
         }
-        for (int i=0;i<vue.getlar();i++){
+        for (int i=0;i<vue.getLargeur();i++){
             for (int j=0;j<vue.gethaut();j++){
                 for (int k=0;k<3;k++){
                     for (int l=0;l<3;l++){
-                        if(i-1+k>=0&&j-1+l>=0&&i-1+k<vue.getlar()&&j-1+l<vue.gethaut()){
+                        if(i-1+k>=0&&j-1+l>=0&&i-1+k<vue.getLargeur()&&j-1+l<vue.gethaut()){
                             if(cases[i-1+k][j-1+l].isbomb()){
                                 cases[i][j].putnumber(cases[i][j].getnumber()+1);
                             }
@@ -41,7 +42,7 @@ public class Grille extends JPanel
         JButton button = (JButton) vue.getreset();
         button.addActionListener(new Actions(this.vue)); 
  
-        setPreferredSize(new Dimension(20*vue.getlar(), 20*vue.gethaut()));
+        setPreferredSize(new Dimension(20*vue.getLargeur(), 20*vue.gethaut()));
         
     }
     @Override
@@ -49,7 +50,7 @@ public class Grille extends JPanel
  
         cases = vue.getCases();
  
-        for (int i = 0; i <vue.getlar(); i++){
+        for (int i = 0; i <vue.getLargeur(); i++){
  
             for (int j = 0; j < vue.gethaut(); j++){
  
@@ -131,7 +132,7 @@ public class Grille extends JPanel
                         g.drawLine(i * 20 + 8, j * 20 + 16, i * 20 + 12, j * 20 + 16);    
                     }
                 }
-                if(vue.win()){
+                if(vue.victoire()){
                     if(current.isbomb()){
                         g.setColor(Color.RED);
                         g.fillRect(i * 20, j * 20, i * 20 + 20, j * 20 + 20);
