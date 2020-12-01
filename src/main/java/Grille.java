@@ -26,7 +26,7 @@ public class Grille extends JPanel
                 for (int k=0;k<3;k++){
                     for (int l=0;l<3;l++){
                         if(i-1+k>=0&&j-1+l>=0&&i-1+k<vue.getLargeur()&&j-1+l<vue.gethaut()){
-                            if(cases[i-1+k][j-1+l].isbomb()){
+                            if(cases[i-1+k][j-1+l].presencebombe()){
                                 cases[i][j].putnumber(cases[i][j].getnumber()+1);
                             }
                         }
@@ -62,7 +62,7 @@ public class Grille extends JPanel
                     g.fillRect(i * 20, j * 20, i * 20 + 20, j * 20 + 20);
                     g.setColor(Color.BLACK);
                 }
-                else if (current.isbomb()){ 
+                else if (current.presencebombe()){ 
                     g.setColor(Color.RED);
                     g.fillRect(i * 20, j * 20, i * 20 + 20, j * 20 + 20);
                     g.setColor(Color.BLACK);
@@ -77,7 +77,7 @@ public class Grille extends JPanel
  
                 
  
-                if (current.shown()&&!current.isbomb()){
+                if (current.shown()&&!current.presencebombe()){
                     if (current.getnumber() == 1){
                         g.drawLine(i * 20 + 13, j * 20 + 5, i * 20 + 13, j * 20 + 9);    
                         g.drawLine(i * 20 + 13, j * 20 + 11, i * 20 + 13, j * 20 + 15);    
@@ -133,7 +133,7 @@ public class Grille extends JPanel
                     }
                 }
                 if(vue.victoire()){
-                    if(current.isbomb()){
+                    if(current.presencebombe()){
                         g.setColor(Color.RED);
                         g.fillRect(i * 20, j * 20, i * 20 + 20, j * 20 + 20);
                         g.setColor(Color.BLACK);
