@@ -28,6 +28,28 @@ public class Actions implements ActionListener, MouseListener {
     }
 
     @Override
+    public void mouseReleased(MouseEvent e){
+
+    }
+
+ 
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
     public void mouseReleased(MouseEvent e) {
 
     }
@@ -39,15 +61,21 @@ public class Actions implements ActionListener, MouseListener {
         vue.refresh();
     }
 
+    
     @Override
-    public void mouseClicked(MouseEvent e) {
+    public void mouseClicked(MouseEvent e){
 
         int x = e.getX() / 20;
         int y = e.getY() / 20;
 
-        vue.selection(x, y);
+            vue.selection(x,y);
 
+        
+ 
+ 
         vue.refresh();
     }
 
+ 
 }
+ 
