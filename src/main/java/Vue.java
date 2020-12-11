@@ -24,13 +24,13 @@ public class Vue extends JFrame {
 
     public void selection(int x, int y) {
 
-        cases[x][y].show();
+        cases[x][y].montrer();
         if (cases[x][y].getnumber() == 0) {//si il n'y a pas de bombe autour
             for (int i = 0; i < 3; i++) {//on parcours les cases autour de la clase cliquée
                 for (int j = 0; j < 3; j++) {
                     if (x + i > 0 && x - 1 + i < this.largeur && y + j > 0 && y - 1 + j < this.haut) {
 //on vérifie qu'on reste dans la grille
-                        if (!cases[x - 1 + i][y - 1 + j].shown()) {
+                        if (!cases[x - 1 + i][y - 1 + j].montre()) {
                             this.selection(x - 1 + i, y - 1 + j);
                         }
                     }
@@ -48,7 +48,7 @@ public class Vue extends JFrame {
 
         for (int i = 0; i < this.largeur; i++) {//on parcours toute la grille
             for (int j = 0; j < this.haut; j++) {//le comtpeur de coup comptera le nombre de bombe+le nombre de case dévoilées
-                if (cases[i][j].presencebombe() || cases[i][j].shown()) {//comme ça, quand le compteur de coup atteint la taille de
+                if (cases[i][j].presencebombe() || cases[i][j].montre()) {//comme ça, quand le compteur de coup atteint la taille de
                     com++;//la grille, le jeu sait que toutes les cases possibles a jouer sans perdre
                 }//ont été jouées.
             }
@@ -70,7 +70,7 @@ public class Vue extends JFrame {
     public void defaite() {//quand on perd on affiche la grille de jeu 
         for (int i = 0; i < this.largeur; i++) {
             for (int j = 0; j < this.haut; j++) {
-                cases[i][j].show();
+                cases[i][j].montrer();
             }
         }
     }

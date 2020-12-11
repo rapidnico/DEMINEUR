@@ -57,7 +57,7 @@ public class Grille extends JPanel
                 Case current = cases[i][j];
  
 
-                if (!current.shown()){ 
+                if (!current.montre()){ 
                     g.setColor(Color.DARK_GRAY);
                     g.fillRect(i * 20, j * 20, i * 20 + 20, j * 20 + 20);
                     g.setColor(Color.BLACK);
@@ -77,7 +77,7 @@ public class Grille extends JPanel
  
                 
  
-                if (current.shown()&&!current.presencebombe()){
+                if (current.montre()&&!current.presencebombe()){
                     if (current.getnumber() == 1){
                         g.drawLine(i * 20 + 13, j * 20 + 5, i * 20 + 13, j * 20 + 9);    
                         g.drawLine(i * 20 + 13, j * 20 + 11, i * 20 + 13, j * 20 + 15);    
