@@ -34,26 +34,7 @@ public class Actions implements ActionListener, MouseListener {
 
  
 
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         vue.winlose();
