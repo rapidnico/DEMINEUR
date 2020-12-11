@@ -11,15 +11,17 @@ import javax.swing.JPanel;
 //@author RICHARD nicolas et SAVOYE Valentin
 public class Case {
 
-    private int n;
-    private boolean isBomb;
+
+   
+    private int a;
+    private boolean isBomb; 
     private boolean isShown;
 
     public Case(int difficulte) {
         // initialisation des variables d'instance
-
-        this.n = 0;
-        double j = (10 - difficulte) * Math.random();
+     
+        this.a=0;
+        double j = (10-difficulte)*Math.random();
         int k = (int) j;
         this.isBomb = false;
         if (k == 0) {
@@ -31,13 +33,13 @@ public class Case {
     public boolean isbomb() {
         return this.isBomb;
     }
-
-    public void putnumber(int y) {
-        this.n = y;
+    public void putnumber(int y)
+    {
+        this.a = y;
     }
-
-    public int getnumber() {
-        return this.n;
+    public int getnumber()
+    {
+        return this.a;
     }
 
     public void show() {
@@ -46,5 +48,6 @@ public class Case {
 
     public boolean shown() {
         return this.isShown;
-    }
+    
+}
 }
