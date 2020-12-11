@@ -15,7 +15,7 @@ public class Case {
    
     private int a;
     private boolean presencebombe; 
-    private boolean isShown;
+    private boolean montrer;
 
     public Case(int difficulte) {
         // initialisation des variables d'instance
@@ -27,7 +27,7 @@ public class Case {
         if (k == 0) {
             this.presencebombe = true;
         }
-        this.isShown = false;
+        this.montrer = false;
     }
 
     public boolean presencebombe() {
@@ -42,12 +42,12 @@ public class Case {
         return this.a;
     }
 
-    public void show() {
-        this.isShown = true;
+    public void montrer() {
+        this.montrer = true;
     }
 
-    public boolean shown() {
-        return this.isShown;
+    public boolean montre() {
+        return this.montrer;
     
 }
 }
