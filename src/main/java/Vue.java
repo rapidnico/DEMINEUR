@@ -38,7 +38,7 @@ public class Vue extends JFrame {
             }
         }
 
-        if (cases[x][y].isbomb()) {//si la case cliquée est une bombe
+        if (cases[x][y].presencebombe()) {//si la case cliquée est une bombe
 
             defaite();//on perd
             this.refresh();//on actualise l'interface
@@ -48,7 +48,7 @@ public class Vue extends JFrame {
 
         for (int i = 0; i < this.largeur; i++) {//on parcours toute la grille
             for (int j = 0; j < this.haut; j++) {//le comtpeur de coup comptera le nombre de bombe+le nombre de case dévoilées
-                if (cases[i][j].isbomb() || cases[i][j].shown()) {//comme ça, quand le compteur de coup atteint la taille de
+                if (cases[i][j].presencebombe() || cases[i][j].shown()) {//comme ça, quand le compteur de coup atteint la taille de
                     com++;//la grille, le jeu sait que toutes les cases possibles a jouer sans perdre
                 }//ont été jouées.
             }

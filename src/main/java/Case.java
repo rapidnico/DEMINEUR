@@ -14,7 +14,7 @@ public class Case {
 
    
     private int a;
-    private boolean isBomb; 
+    private boolean presencebombe; 
     private boolean isShown;
 
     public Case(int difficulte) {
@@ -23,15 +23,15 @@ public class Case {
         this.a=0;
         double j = (10-difficulte)*Math.random();
         int k = (int) j;
-        this.isBomb = false;
+        this.presencebombe = false;
         if (k == 0) {
-            this.isBomb = true;
+            this.presencebombe = true;
         }
         this.isShown = false;
     }
 
-    public boolean isbomb() {
-        return this.isBomb;
+    public boolean presencebombe() {
+        return this.presencebombe;
     }
     public void putnumber(int y)
     {
