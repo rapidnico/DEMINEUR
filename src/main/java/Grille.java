@@ -57,12 +57,12 @@ public class Grille extends JPanel
                 Case current = cases[i][j];
  
 
-                if (!current.montre()){ 
+                if (!current.montre()){                 // On met d'abord une "couche" de gris clair sur toute les cases 
                     g.setColor(Color.DARK_GRAY);
                     g.fillRect(i * 20, j * 20, i * 20 + 20, j * 20 + 20);
                     g.setColor(Color.BLACK);
                 }
-                else if (current.presencebombe()){ 
+                else if (current.presencebombe()){     // Si on a un bombe présente sur la case on met d'abord une "couche" de rouge puis par dessus une "couche" de noir
                     g.setColor(Color.RED);
                     g.fillRect(i * 20, j * 20, i * 20 + 20, j * 20 + 20);
                     g.setColor(Color.BLACK);
@@ -70,7 +70,7 @@ public class Grille extends JPanel
                     g.drawLine(i * 20, j * 20 + 20, i * 20 + 20, j * 20);
                 }
                 else{ 
-                    g.setColor(Color.LIGHT_GRAY);
+                    g.setColor(Color.LIGHT_GRAY);    // Sinon on remet du gris clair puis une "couche" de noir
                     g.fillRect(i * 20, j * 20, i * 20 + 20, j * 20 + 20);
                     g.setColor(Color.BLACK);
                 }
@@ -132,7 +132,7 @@ public class Grille extends JPanel
                         g.drawLine(i * 20 + 8, j * 20 + 16, i * 20 + 12, j * 20 + 16);    
                     }
                 }
-                if(vue.victoire()){
+                if(vue.victoire()){                     // si on gagne les cases seront alors dévoilé, les bombes seront en rouge et le reste en jaune 
                     if(current.presencebombe()){
                         g.setColor(Color.RED);
                         g.fillRect(i * 20, j * 20, i * 20 + 20, j * 20 + 20);
