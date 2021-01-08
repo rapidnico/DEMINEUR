@@ -21,9 +21,9 @@ public class Case {
         // initialisation des variables d'instance
      
         this.a=0;
-        double j = (10-difficulte)*Math.random();
-        int k = (int) j;
-        this.presencebombe = false;
+        double j = (10-difficulte)*Math.random();  // on initialise selon la difficulté le nombre de bombe sur la grille plus le nombre de difficulté est élevé plus la chance d'avoir une bombe 
+        int k = (int) j;                           // sur une des cases est élevé elle aussi 
+        this.presencebombe = false;                // De plus on verifie que la case n'a pas deja une bombe associé 
         if (k == 0) {
             this.presencebombe = true;
         }
